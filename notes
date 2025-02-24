@@ -1,0 +1,21 @@
+all hierarcy -> from browser to web server to database
+
+
+1 browser/postman (client)-->
+2 spring boot rest controller --->
+3 spring boot service layer calls -->
+4 spring boot data jpa repo calls -->
+5 spring boot with jpa calls -->
+6 jpa Apis calls -->
+7 hibernate lib method calls (it has actual impl of JPA api interfaces) -->
+8 jdbc layer actual query fired -->
+9 database
+
+Layers 1 postman or browser so its visible
+
+layer 2,3,4 are visible to you because you have coded it -> logging --> see its working
+
+layer 5,6,7,8 are not visible as part of internal working of data-jpa, and jpa's hibernate impl
+but you can check queries fired on console using show_sql configuration
+
+layer 9 database visible you can go and check in database
